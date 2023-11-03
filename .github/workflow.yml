@@ -1,0 +1,16 @@
+---
+name: Test workflow
+on:
+  workflow_dispatch:
+    inputs:
+      arguments:
+        description: Script and arguments
+        required: true
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Run printf with arguments
+      run: printf "%s\n" "${{ github.event.inputs.arguments }}"
