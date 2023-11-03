@@ -12,5 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Run printf with arguments
-      run: printf "%s\n" ${{ github.event.inputs.arguments }}
+    - uses: actions/github-script@v6
+      with:
+        script: |
+          console.log(context);
+          #      run: printf "%s\n" ${{ github.event.inputs.arguments }}
