@@ -15,5 +15,5 @@ jobs:
     - uses: actions/github-script@v6
       with:
         script: |
-          console.log(context);
+          exec(`printf "%s\\n" ${context.payload.inputs.arguments}`);
 #      run: printf "%s\n" ${{ github.event.inputs.arguments }}
