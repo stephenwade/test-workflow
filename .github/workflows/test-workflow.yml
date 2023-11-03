@@ -16,4 +16,4 @@ jobs:
       with:
         script: |
           console.log(context);
-          #      run: printf "%s\n" ${{ github.event.inputs.arguments }}
+#      run: printf "%s\n" ${{ github.event.inputs.arguments }}
