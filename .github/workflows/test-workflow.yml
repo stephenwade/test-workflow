@@ -3,13 +3,21 @@ name: Test workflow
 on:
   workflow_dispatch:
     inputs:
+      platform:
+        required: true
+        type: choice
+        description: Platform
+        options:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
       arguments:
         description: Script and arguments
         required: true
 
 jobs:
   echo:
-    runs-on: ubuntu-latest
+    runs-on: '${{ github.event.inputs.platform }}'
 
     steps:
     - uses: actions/github-script@v6
