@@ -20,7 +20,7 @@ jobs:
     runs-on: '${{ github.event.inputs.platform }}'
 
     steps:
-    - uses: actions/github-script@v6
+    - uses: actions/github-script@v7
       with:
         script: |
           exec.exec(`printf "%s\\n" ${context.payload.inputs.arguments}`);
